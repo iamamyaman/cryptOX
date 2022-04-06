@@ -1,7 +1,33 @@
-
+import React from "react"
+import CoinPage from "./Pages/CoinPage";
+import HomePage from "./Pages/HomePage";
+import { BrowserRouter, Route,Routes } from "react-router-dom";
 import './App.css';
+import Header from "./components/Header";
+import { makeStyles } from "@mui/styles";
+import { minHeight } from "@mui/system";
 
-function App() {
+const useStyles = makeStyles(()=>({
+   App:{
+      backgroundColor:"#383737",
+      minHeight:"100vh",
+      color:"white"
+   }
+}))
+
+function App(){
+   const classes = useStyles()
+   return(
+       <BrowserRouter>
+          <div className={classes.App}>
+            <Header/>
+            <Routes>
+            <Route path ="/" element={<HomePage/>} />
+            <Route path ="/coins/:id" element={<CoinPage/>} />
+            </Routes>
+          </div>
+       </BrowserRouter>
+   )
 }
 
 export default App;
