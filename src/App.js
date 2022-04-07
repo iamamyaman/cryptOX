@@ -11,7 +11,8 @@ const useStyles = makeStyles(()=>({
    App:{
       backgroundColor:"white",
       minHeight:"100vh",
-      color:"white"
+      color:"white",
+      width:"100vw",
    }
 }))
 
