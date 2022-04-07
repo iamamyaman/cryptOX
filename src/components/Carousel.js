@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 import axios from "axios";
 import { TrendingCoins } from "../config/api";
@@ -18,13 +18,13 @@ const useStyles=makeStyles(()=>({
 
 
 const Carousel =()=>{
-
+    const [trending,setTrending] = useState();
     const classes=useStyles();
     const {currency} = CryptoState();
 
     const fetchTrendingCoins = async()=>{
         const {data} = await axios.get(TrendingCoins(`${currency}`));
-        console.log(data);
+
     }
     
     useEffect(() => {
@@ -33,7 +33,6 @@ const Carousel =()=>{
 
     return(
         <div className={classes.carousel}>
-            <h1>Carousel</h1>
         </div>
     );
 };
