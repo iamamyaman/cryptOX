@@ -1,30 +1,36 @@
-import { Container, Typography } from "@mui/material";
+import { Button, Container, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
-const useStyles=makeStyles(()=>({
-    banner:{
-       backgroundImage:"url(https://media-exp1.licdn.com/dms/image/C5612AQE8ZaPe94ukTw/article-cover_image-shrink_600_2000/0/1540373473212?e=1652918400&v=beta&t=IS2WSlNrdWU8e0lfRuZ508rmk-bJB6Hvtkohv-A3JdQ)",
-       backgroundPosition:"center"
-    },
-    bannerContent:{
-       height:400,
-       display:"flex",
-       flexDirection:"column",
-       justifyContent:"space-around",
-       paddingTop:25,
-
-    }
-}))
+import { margin } from "@mui/system";
+import "../App.css"
 
 const Banner =()=>{
-const classes = useStyles();
-    return(
-        <div className={classes.banner}>
-            <Container className={classes.bannerContent}>
-                <Typography variant="h3">TRACK YOUR CRYPTO</Typography>
-            </Container>
+return(
+    <div className="hero">
+        <div className="hero-image" >
+            <img src="./hero.png" style={{maxWidth:600}}></img>
         </div>
-    )
+        <div className="hero-content">
+            <h1>Track your fav <br></br>
+                <span style={{color:"#AE35FF"}}>
+                    Cryptocurrency
+                </span>
+            </h1>
+            <p>
+                Now all your favorite cryptocurrencies at one place to track.<br></br>
+                Login and Add your favorite crypto in your wishlist.
+            </p>
+            <div className="buttons">
+            <button className ="login-btn">
+                LOGIN
+            </button>
+            <button className ="track-btn">
+                TRACK CRYPTO
+            </button>
+            </div>
+        </div>
+
+    </div>
+)
 }
 
 export default Banner;
