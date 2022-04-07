@@ -12,7 +12,6 @@ const useStyles=makeStyles(()=>({
         justifyContent:"center",
         alignItems:"center"
 
-
     }
 }));
 
@@ -24,13 +23,15 @@ const Carousel =()=>{
 
     const fetchTrendingCoins = async()=>{
         const {data} = await axios.get(TrendingCoins(`${currency}`));
-
+        setTrending(data);
+        console.log(data);
     }
     
     useEffect(() => {
        fetchTrendingCoins()
     }, [currency])
 
+  
     return(
         <div className={classes.carousel}>
         </div>
