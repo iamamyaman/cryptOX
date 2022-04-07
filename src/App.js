@@ -9,7 +9,7 @@ import { minHeight } from "@mui/system";
 
 const useStyles = makeStyles(()=>({
    App:{
-      backgroundColor:"#383737",
+      backgroundColor:"white",
       minHeight:"100vh",
       color:"white"
    }

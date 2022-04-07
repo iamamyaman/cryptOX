@@ -3,14 +3,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import "../App.css";
 import { useNavigate } from 'react-router-dom';
+import {CryptoState} from "../Context";
 
 
 const useStyles= makeStyles((theme)=>({
   title:{
     flex:1,
-    color:"#2be9ff",
+    color:"#ae35ff",
     cursor:"pointer",
-    
   }
 }));
 
@@ -21,11 +21,13 @@ export default function Header() {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#fff",
+        main: "#ae35ff",
       },
-      mode: "dark",
+     
     },
   });
+
+  const {currency,symbol,setCurrency} = CryptoState();
 
   return (
       <ThemeProvider theme={darkTheme}>
@@ -33,14 +35,17 @@ export default function Header() {
         <Container>
           <Toolbar>
             <Typography
-             variant ="h6" 
+             fontWeight="900"
+             fontFamily="Montserrat"
+             variant ="h4" 
              onClick ={()=>navigate("/")} 
              className={classes.title}
              >
-              CryptOX
+              Crypt<span style={{color:"#6e16ad"}}>OX</span>
             </Typography>
             <Select 
-              value={"INR"}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
               variant ="outlined"
               style={{
                 width:100,
