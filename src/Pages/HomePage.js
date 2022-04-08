@@ -1,12 +1,12 @@
 import { CryptoState } from "../Context";
 import Banner from "../components/Banner";
-import Carousel from "../components/Carousel";
+import CoinsTable from "../components/CoinsTable"
 
 export default function HomePage() {
     return(
       <div>
         <Banner/>
-        <Carousel/>
+        <CoinsTable/>
       </div>
     );
       

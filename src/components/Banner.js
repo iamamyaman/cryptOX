@@ -24,7 +24,7 @@ return(
                 LOGIN
             </button>
             <button className ="track-btn">
-                TRACK CRYPTO
+                <a href ="#price-table" style={{textDecoration:"none",color:"white"}}>TRACK CRYPTO</a>
             </button>
             </div>
         </div>
