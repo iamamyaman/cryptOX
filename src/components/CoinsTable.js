@@ -34,7 +34,11 @@ const CoinsTable =()=>{
        fetchCoins();
     }, [currency]);
     
-    console.log(search);
+    const handleSearch =() =>{
+        coinlist.filter((coin)=>{
+            coin.name.toLowerCase().includes(search) || coin.symbol.toLowerCase().includes(search)
+        })
+    }
 
     const darkTheme = createTheme({
         palette: {
