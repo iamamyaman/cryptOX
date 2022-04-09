@@ -11,12 +11,12 @@ return(
         </div>
         <div className="hero-content">
             <h1>Track your fav <br></br>
-                <span style={{color:"#AE35FF"}}>
+                <span style={{color:"#bc5eff"}}>
                     Cryptocurrency
                 </span>
             </h1>
             <p>
-                Now all your favorite cryptocurrencies at one place to track.<br></br>
+                Now all your favorite cryptocurrencies at one place to track.
                 Login and Add your favorite crypto in your wishlist.
             </p>
             <div className="buttons">

@@ -21,7 +21,7 @@ export default function Header() {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#ae35ff",
+        main: "#bc5eff",
       },
      
     },
