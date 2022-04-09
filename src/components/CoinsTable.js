@@ -85,7 +85,7 @@ const CoinsTable =()=>{
               <TextField 
                 label="Search for a Cryptocurrency..." 
                 variant="outlined"
-                style={{width:"70%",marginBottom:20}}
+                style={{width:"100%",marginBottom:20}}
                 color="secondary"
                 onChange={(e)=>setSearch(e.target.value)}
                 />
@@ -97,14 +97,13 @@ const CoinsTable =()=>{
                         <Table>
                         <TableHead style={{backgroundColor:"#6e16ad"}}>
                             <TableRow >
-                            {["Coin","Price","24hr Change","Market Cap"].map((head)=>(
+                            {["Coin","Price","24h Change","Market Cap"].map((head)=>(
                                 <TableCell
                                   style={{color:"white",fontFamily:"Montserrat"}}
                                   key={head}
                                   align={head==="Coin" ? "":"right"}
                                 >
-
-                                   {head}
+                                  {head}
                                 </TableCell>
                             ))}
                             </TableRow>
@@ -124,7 +123,7 @@ const CoinsTable =()=>{
                                 <TableCell
                                   component="th"
                                   scope="row"
-                                  style={{display:"flex",gap:15}}
+                                  style={{display:"flex",gap:7}}
                                  >
                                     <img
                                       src={row?.image}
@@ -144,7 +143,7 @@ const CoinsTable =()=>{
                                 </TableCell>
                                 
                                 <TableCell align="right" style={{fontWeight:700,color:"#6e16ad",fontFamily:"Montserrat"}}>
-                                  {symbol}{numberWithCommas(row.current_price.toFixed(3))}
+                                  {symbol}{numberWithCommas(row.current_price.toFixed(2))}
                                 </TableCell>
 
                                 <TableCell  align="right">
