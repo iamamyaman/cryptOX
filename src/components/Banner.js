@@ -16,7 +16,7 @@ return(
                 </span>
             </h1>
             <p>
-                Now all your favorite cryptocurrencies at one place to track.
+                Now all your favorite cryptocurrencies at one place to track.<br></br>
                 Login and Add your favorite crypto in your wishlist.
             </p>
             <div className="buttons">

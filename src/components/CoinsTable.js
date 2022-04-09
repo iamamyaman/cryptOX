@@ -8,6 +8,7 @@ import {
     TableCell,
     Table,
     TableBody,
+    Pagination,
  } from "@mui/material";
 import { ThemeProvider ,makeStyles} from "@mui/styles";
 import { createTheme,TextField } from "@mui/material";
@@ -61,15 +62,16 @@ const CoinsTable =()=>{
       });
 
 
-      const useStyles= makeStyles(()=>({
+      const useStyles= makeStyles({
         row:{
-          backgroundColor:"#e3d2ef",
+          backgroundColor:"#f5e8ff",
           cursor:"pointer",
+          borderBottom:"solid 2px #ca8af7",
           "&:hover":{
-            backgroundColor:"#ceaee5"
+            backgroundColor:"#decbed"
           }
         }
-      }));
+      });
 
       const classes = useStyles();
 
@@ -131,7 +133,7 @@ const CoinsTable =()=>{
                                       style={{ marginBottom: 10 }}
                                     />
                                     <div style={{ display: "flex", flexDirection: "column" }}>
-                                      <span style={{fontFamily:"Montserrat",fontWeight:"700",color:"#6e16ad"}}>
+                                      <span style={{fontFamily:"Montserrat",fontWeight:"700",color:"#6e16ad",fontSize:"20px"}}>
                                         {row.symbol.toUpperCase()}
                                       </span>
                                       <span style={{fontFamily:"Montserrat",color:"#6e16ad"}}>
@@ -164,6 +166,23 @@ const CoinsTable =()=>{
                       )
                    }
                 </TableContainer>
+                <Pagination 
+                  count={(handleSearch()?.length / 10).toFixed(0)} 
+                  color="secondary"
+                  style={{
+                    padding: 20,
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    marginBottom:"100px"
+                  }}
+                  variant="outlined" 
+                  onChange={(_, value) => {
+                    setPage(value);
+                    window.scroll(0, 450);
+                  }}
+                >
+                </Pagination>
           </Container>
       </ThemeProvider>
     );
