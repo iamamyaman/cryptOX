@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 import "../App.css";
 import { useNavigate } from 'react-router-dom';
 import {CryptoState} from "../Context";
+import { borderBottom } from '@mui/system';
 
 
 const useStyles= makeStyles((theme)=>({
@@ -31,7 +32,7 @@ export default function Header() {
 
   return (
       <ThemeProvider theme={darkTheme}>
-      <AppBar color='transparent' position='static'>
+      <AppBar sx={{height:80,justifyContent:"center",borderBottom:"solid 2px #6e16ad",boxShadow:"none"}} color='transparent'  position='static'>
         <Container>
           <Toolbar>
             <Typography

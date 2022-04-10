@@ -132,7 +132,7 @@ const CoinsTable =()=>{
                                       style={{ marginBottom: 10 }}
                                     />
                                     <div style={{ display: "flex", flexDirection: "column" }}>
-                                      <span style={{fontFamily:"Montserrat",fontWeight:"700",color:"#6e16ad",fontSize:"20px"}}>
+                                      <span style={{fontFamily:"Montserrat",fontWeight:"700",color:"#6e16ad",fontSize:"18px"}}>
                                         {row.symbol.toUpperCase()}
                                       </span>
                                       <span style={{fontFamily:"Montserrat",color:"#6e16ad"}}>
@@ -173,12 +173,14 @@ const CoinsTable =()=>{
                     width: "100%",
                     display: "flex",
                     justifyContent: "center",
-                    marginBottom:"100px"
+                    marginBottom:"50px"
                   }}
                   variant="outlined" 
                   onChange={(_, value) => {
                     setPage(value);
                     window.scroll(0, 450);
+
+
                   }}
                 >
                 </Pagination>
