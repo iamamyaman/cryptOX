@@ -101,7 +101,7 @@ const CoinsTable =()=>{
                                 <TableCell
                                   style={{color:"white",fontFamily:"Montserrat"}}
                                   key={head}
-                                  align={head==="Coin" ? "":"right"}
+                                  align={head==="Coin" ? "left":"right"}
                                 >
                                   {head}
                                 </TableCell>
@@ -118,7 +118,7 @@ const CoinsTable =()=>{
                               <TableRow 
                                 className={classes.row}
                                 onClick = {()=>navigate(`/coins/${row.id}`)} 
-                                Key = {row.name}
+                                key = {row.name}
                               >
                                 <TableCell
                                   component="th"
@@ -166,7 +166,7 @@ const CoinsTable =()=>{
                    }
                 </TableContainer>
                 <Pagination 
-                  count={(handleSearch()?.length / 10).toFixed(0)} 
+                  count={(handleSearch()?.length / 10)} 
                   color="secondary"
                   style={{
                     padding: 20,
@@ -179,7 +179,6 @@ const CoinsTable =()=>{
                   onChange={(_, value) => {
                     setPage(value);
                     window.scroll(0, 450);
-
 
                   }}
                 >

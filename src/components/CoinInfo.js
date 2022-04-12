@@ -3,7 +3,7 @@ const CoinInfo=()=>{
 
     return(
         <div>
-            CoinInfo         
+            {/* CoinInfo          */}
         </div>
     );
 };

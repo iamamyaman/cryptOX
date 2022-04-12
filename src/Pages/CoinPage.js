@@ -62,9 +62,6 @@ const CoinPage = ()=>{
           paddingBottom: 5,
           paddingTop: 0,
           textAlign: "justify",
-          a:{
-              color:"yellow"
-          }
           
         },
         marketData: {
@@ -93,7 +90,7 @@ const CoinPage = ()=>{
 
     const classes = useStyles();
 
-    if (!coin) return <LinearProgress/>;
+    if (!coin) return <LinearProgress color="secondary"/>;
 
     return(
         <ThemeProvider theme={lightTheme}>
@@ -102,19 +99,20 @@ const CoinPage = ()=>{
                 <img
                     src={coin?.image.large}
                     alt={coin?.name}
-                    height="200"
+                    width="150px"
                     style={{ marginBottom: 20 }}
                 />
                 <Typography variant="h3" className={classes.heading} style={{
                         fontWeight: "bolder",
                         marginBottom: 20,
-                        fontFamily: "Montserrat"}}>
+                        fontFamily: "Montserrat",
+                        color:"#6e16ad"}}>
                   {coin?.name}
                 </Typography>
                 <Typography 
                   variant="subtitle1" 
                   className={classes.description} 
-                  style={{fontFamily: "Montserrat"}}
+                  style={{fontFamily: "Montserrat",color:"#9a88a8"}}
                 >
                   {parse(coin?.description.en.split(". ")[0])}.
                 </Typography>
@@ -122,7 +120,8 @@ const CoinPage = ()=>{
                 <span style={{ display: "flex" }}>
                     <Typography variant="h5" className={classes.heading} style={{
                         fontWeight: "bolder",
-                        fontFamily: "Montserrat"}}>
+                        fontFamily: "Montserrat",
+                        color:"#66437f"}}>
                     Rank:
                     </Typography>
                     &nbsp; &nbsp;
@@ -140,6 +139,7 @@ const CoinPage = ()=>{
                     <Typography variant="h5" className={classes.heading} style={{
                         fontWeight: "bolder",
                         fontFamily: "Montserrat",
+                        color:"#66437f"
                     }}>
                     Current Price:
                     </Typography>
@@ -160,7 +160,8 @@ const CoinPage = ()=>{
                     <Typography variant="h5" className={classes.heading} style={{
                         fontWeight: "bolder",
                         marginBottom: 20,
-                        fontFamily: "Montserrat"}}>
+                        fontFamily: "Montserrat",
+                        color:"#66437f"}}>
                     Market Cap:
                     </Typography>
                     &nbsp; &nbsp;
