@@ -5,15 +5,17 @@ import { useParams } from "react-router-dom";
 import { CryptoState } from "../Context";
 import { makeStyles } from "@mui/styles";
 import { ClassNames } from "@emotion/react";
-import { CircularProgress } from "@mui/material";
-import { Chart } from 'react-chartjs-2';
+import { Button, CircularProgress, Container } from "@mui/material";
 import { Line } from "react-chartjs-2";
+import { Chart as ChartJS } from 'chart.js/auto';
+import { Chart } from 'react-chartjs-2';
+import { chartDays } from "../config/buttonData";
 
 const CoinInfo=()=>{
    const{id} = useParams();
    const[coinData,setCoinData] = useState();
    const {currency,symbol} = CryptoState();
-   const [days,setDays] = useState(1);
+   const [days,setDays] = useState(365);
 
    const fetchCoinData = async()=>{
        const {data} = await axios.get(HistoricalChart(id, days,currency));
@@ -68,7 +70,7 @@ const CoinInfo=()=>{
                       datasets: [
                         {
                           data: coinData.map((coin) => coin[1]),
-                          label: `Price ( Past ${days} Days ) in ${currency}`,
+                          label: `Price ( Past ${days} Days ) in ${currency}`, 
                           borderColor: "#ae35ff",
                         },
                       ],
@@ -84,6 +86,14 @@ const CoinInfo=()=>{
                   </>
                   )
             }
+            <Container style={{display:"flex",gap:"20px"}}>
+           {chartDays.map((item)=>{
+               return(
+               <Button onClick={()=>setDays(item.value)} key={item.value} style={{backgroundColor:"#ae35ff" ,color:"white",flex:1}}>
+                   {item.label}
+                </Button>)
+           })}
+           </Container>
         </div>
     );
 };
