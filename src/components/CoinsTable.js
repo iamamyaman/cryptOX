@@ -52,7 +52,7 @@ const CoinsTable =()=>{
     };
 
    
-    const darkTheme = createTheme({
+    const lightTheme = createTheme({
         palette: {
           primary:{
               main: "#bc5eff"
@@ -76,7 +76,7 @@ const CoinsTable =()=>{
       const classes = useStyles();
 
     return(
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={lightTheme}>
           <Container id ="price-table" style={{textAlign:"center"}}>
               <Typography variant="h5" style={{margin:18,fontFamily:"Montserrat",fontSize:25,fontWeight:700,color:"#bc5eff"}}>
               💸 Cryptocurrencies Prices <span style={{color:"#6e16ad",fontSize:25,fontWeight:700}}>by Market Cap</span> 💹

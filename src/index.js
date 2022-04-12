@@ -5,9 +5,11 @@ import CryptoContext from "./Context"
 
 
 ReactDOM.render(
+  <React.StrictMode>
   <CryptoContext>
     <App />
-  </CryptoContext>,
+  </CryptoContext>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

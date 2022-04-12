@@ -4,9 +4,19 @@ import HomePage from "./Pages/HomePage";
 import { BrowserRouter, Route,Routes } from "react-router-dom";
 import './App.css';
 import Header from "./components/Header";
-import { makeStyles } from "@mui/styles";
-import Footer from "./components/Footer"
+import { makeStyles, ThemeProvider } from "@mui/styles";
+import Footer from "./components/Footer";
+import { createTheme } from "@mui/material";
 
+const lightTheme = createTheme({
+   palette: {
+     primary:{
+         main: "#bc5eff"
+     },
+     mode: 'light',
+   },
+ });
+ 
 const useStyles = makeStyles(()=>({
    App:{
       backgroundColor:"white",
@@ -14,11 +24,14 @@ const useStyles = makeStyles(()=>({
       color:"gray",
       width:"100vw",
    }
-}))
+}));
+
+
 
 function App(){
    const classes = useStyles()
    return(
+      <ThemeProvider theme={lightTheme}>
        <BrowserRouter>
           <div className={classes.App}>
             <Header/>
@@ -29,6 +42,7 @@ function App(){
             <Footer/>
           </div>
        </BrowserRouter>
+       </ThemeProvider>
    )
 }
 
