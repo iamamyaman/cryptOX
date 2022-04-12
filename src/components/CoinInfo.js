@@ -86,7 +86,7 @@ const CoinInfo=()=>{
                   </>
                   )
             }
-            <Container style={{display:"flex",gap:"20px"}}>
+            <Container style={{display:"flex",gap:"10px"}}>
            {chartDays.map((item)=>{
                return(
                <Button onClick={()=>setDays(item.value)} key={item.value} style={{backgroundColor:"#ae35ff" ,color:"white",flex:1}}>

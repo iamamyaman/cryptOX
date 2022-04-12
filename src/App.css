@@ -51,6 +51,7 @@ body{
     margin-top:25px
 }
 
+
 @media screen and (max-width:1000px) {
     .hero{
         flex-direction: column;
@@ -91,6 +92,10 @@ body{
     font-family:Montserrat;
     font-size:12px;
     border:2px solid #AE35FF 
+}
+.login-btn:hover{
+    background-color:#AE35FF;
+    color:white
 }
 
 .track-btn{
