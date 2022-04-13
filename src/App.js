@@ -17,16 +17,14 @@ const lightTheme = createTheme({
    },
  });
  
-const useStyles = makeStyles(()=>({
+const useStyles = makeStyles((theme)=>({
    App:{
       backgroundColor:"white",
       minHeight:"100vh",
-      color:"gray",
+      color:"#893dbf",
       width:"100vw",
    }
 }));
-
-
 
 function App(){
    const classes = useStyles()

@@ -82,14 +82,19 @@ const CoinInfo=()=>{
                         },
                       },
                     }}
-                  />;
+                  />
                   </>
                   )
             }
-            <Container style={{display:"flex",gap:"10px"}}>
+            <Container style={{display:"flex",gap:"10px",marginTop:"10px"}}>
            {chartDays.map((item)=>{
                return(
-               <Button onClick={()=>setDays(item.value)} key={item.value} style={{backgroundColor:"#ae35ff" ,color:"white",flex:1}}>
+               <Button 
+                 onClick={()=>setDays(item.value)} 
+                 key={item.value} 
+                 style={{backgroundColor:"#6e16ad" ,color:"white",flex:1 }}
+                 
+                 >
                    {item.label}
                 </Button>)
            })}

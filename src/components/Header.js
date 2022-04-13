@@ -5,6 +5,7 @@ import "../App.css";
 import { useNavigate } from 'react-router-dom';
 import {CryptoState} from "../Context";
 import { borderBottom } from '@mui/system';
+import AuthModal from './Authentication/AuthModal';
 
 
 const useStyles= makeStyles((theme)=>({
@@ -57,6 +58,7 @@ export default function Header() {
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={'INR'}>INR</MenuItem>
             </Select>
+            <AuthModal/>
           </Toolbar>
         </Container>
       </AppBar>
