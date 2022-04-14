@@ -6,6 +6,14 @@ const CryptoContext =({children})=>{
     const [currency,setCurrency] = useState("INR");
     const [symbol,setSymbol] = useState('₹');
     const[user,setUser] =useState(null);
+    const[alert,setAlert] = useState({
+         open:false,
+         message:"",
+         type:"success"
+    });
+    const [coins, setCoins] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [watchlist, setWatchlist] = useState([]);
 
     useEffect(() => {
         if(currency==="INR") setSymbol("₹");
@@ -13,7 +21,7 @@ const CryptoContext =({children})=>{
     }, [currency]);
 
     return(
-        <Crypto.Provider value={{currency,symbol,setCurrency}}>
+        <Crypto.Provider value={{currency,symbol,setCurrency,alert,setAlert}}>
             {children}
         </Crypto.Provider>
     );

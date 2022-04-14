@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import { makeStyles, ThemeProvider } from "@mui/styles";
 import Footer from "./components/Footer";
 import { createTheme } from "@mui/material";
+import BasicAlert from "./components/Alert"
 
 const lightTheme = createTheme({
    palette: {
@@ -39,6 +40,7 @@ function App(){
             </Routes>
             <Footer/>
           </div>
+          <BasicAlert />
        </BrowserRouter>
        </ThemeProvider>
    )

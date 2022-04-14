@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     width: 400,
     backgroundColor: "white",
-    color: "white",
+    color: "#6e16ad",
     borderRadius: 10,
   },
   google: {
@@ -54,7 +54,7 @@ export default function AuthModal() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
- console.log(value);
+  
   const googleProvider = new GoogleAuthProvider();
 
   const signInWithGoogle = () => {
