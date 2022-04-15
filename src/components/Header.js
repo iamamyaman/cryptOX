@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {CryptoState} from "../Context";
 import { borderBottom } from '@mui/system';
 import AuthModal from './Authentication/AuthModal';
+import Sidebar from './Sidebar';
 
 
 const useStyles= makeStyles((theme)=>({
@@ -29,7 +30,7 @@ export default function Header() {
     },
   });
 
-  const {currency,symbol,setCurrency} = CryptoState();
+  const {currency,symbol,setCurrency,user} = CryptoState();
 
   return (
       <ThemeProvider theme={darkTheme}>
@@ -58,7 +59,7 @@ export default function Header() {
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={'INR'}>INR</MenuItem>
             </Select>
-            <AuthModal/>
+            { user ? <Sidebar/>:<AuthModal/>}
           </Toolbar>
         </Container>
       </AppBar>

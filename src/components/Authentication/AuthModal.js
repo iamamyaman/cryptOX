@@ -39,7 +39,7 @@ export default function AuthModal() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const { setAlert } = CryptoState();
+  const { setAlert,user } = CryptoState();
 
   const handleOpen = () => {
     setOpen(true);
@@ -54,7 +54,7 @@ export default function AuthModal() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  
+
   const googleProvider = new GoogleAuthProvider();
 
   const signInWithGoogle = () => {

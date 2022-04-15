@@ -1,5 +1,6 @@
 import { 
     Container,
+    Box,
     LinearProgress,
     TableContainer,
     Typography,
@@ -9,6 +10,7 @@ import {
     Table,
     TableBody,
     Pagination,
+    Button,
  } from "@mui/material";
 import { ThemeProvider ,makeStyles} from "@mui/styles";
 import { createTheme,TextField } from "@mui/material";
@@ -63,6 +65,7 @@ const CoinsTable =()=>{
 
 
       const useStyles= makeStyles({
+       
         row:{
           backgroundColor:"#f5e8ff",
           cursor:"pointer",
@@ -88,7 +91,7 @@ const CoinsTable =()=>{
                 style={{width:"100%",marginBottom:20}}
                 color="secondary"
                 onChange={(e)=>setSearch(e.target.value)}
-                />
+              />
 
                 <TableContainer style={{borderRadius:"10px"}}>
                    {loading
@@ -121,8 +124,8 @@ const CoinsTable =()=>{
                                 key = {row.name}
                               >
                                 <TableCell
-                                  component="th"
-                                  scope="row"
+                                  // component="th"
+                                  // scope="row"
                                   style={{display:"flex",gap:7}}
                                  >
                                     <img
@@ -150,6 +153,7 @@ const CoinsTable =()=>{
                                   <span style={{color:profit ? "green" :"#ff2828",fontWeight:700,fontFamily:"Montserrat"}}>
                                     {profit && "+"}
                                     {row.price_change_percentage_24h.toFixed(2)}%
+                                    {console.log(row.price_change_percentage_24h)}
                                   </span>
                                 </TableCell>
 

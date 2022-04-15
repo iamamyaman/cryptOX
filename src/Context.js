@@ -1,4 +1,6 @@
+import { onAuthStateChanged } from "firebase/auth";
 import { createContext, useContext, useState,useEffect } from "react";
+import { auth } from "./firbase";
 
 const Crypto = createContext();
 
@@ -15,13 +17,21 @@ const CryptoContext =({children})=>{
     const [loading, setLoading] = useState(false);
     const [watchlist, setWatchlist] = useState([]);
 
+    useEffect(()=>{
+        onAuthStateChanged(auth,user=>{
+            if(user) setUser(user);
+            else setUser(null);
+        })
+        
+    })
+
     useEffect(() => {
         if(currency==="INR") setSymbol("₹");
         else {setSymbol("$")};
     }, [currency]);
 
     return(
-        <Crypto.Provider value={{currency,symbol,setCurrency,alert,setAlert}}>
+        <Crypto.Provider value={{currency,symbol,setCurrency,alert,setAlert,user}}>
             {children}
         </Crypto.Provider>
     );
