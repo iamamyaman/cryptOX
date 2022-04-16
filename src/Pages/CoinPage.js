@@ -29,9 +29,7 @@ const CoinPage = ()=>{
     useEffect(() => {
         fetchCoin();
     }, []);
-    console.log(watchlist);
-
-    
+    ;
 
     const inWatchlist = watchlist.includes(coin?.id);
 
@@ -243,7 +241,7 @@ const CoinPage = ()=>{
                   style={{width:"95%"}}
                   onClick ={inWatchlist ? removeFromWatchlist : addToWatchlist}
                 >
-                  {inWatchlist ? "REMOVE FROM WATCHLIST" : "ADD TO WATCHLIST"}
+                  {inWatchlist ? "DELETE FROM WATCHLIST" : "ADD TO WATCHLIST"}
                 </Button>
                 }
             </div>

@@ -26,27 +26,14 @@ export function numberWithCommas(x) {
 };
 
 const CoinsTable =()=>{
-
-    const[coinlist,setCoinlist] = useState([]);
-    const [loading,setLoading] = useState(true);
     const [search,setSearch] = useState("");
     const [page,setPage] = useState(1);
-    const {currency,symbol} = CryptoState();
+    const {currency,symbol,coins,loading} = CryptoState();
 
     const navigate = useNavigate();
-
-    const fetchCoins =async()=>{
-        const {data} = await axios.get(CoinList(currency));
-        setCoinlist(data);
-        setLoading(false);
-    };
-
-    useEffect(() => {
-       fetchCoins();
-    }, [currency]);
     
     const handleSearch = () => {
-      return coinlist.filter(
+      return coins.filter(
         (coin) =>
           coin.name.toLowerCase().includes(search.toLowerCase()) ||
           coin.symbol.toLowerCase().includes(search.toLowerCase())

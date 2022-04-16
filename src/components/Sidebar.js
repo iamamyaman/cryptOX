@@ -14,15 +14,14 @@ import { Avatar} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firbase';
+import CoinsTable from './CoinsTable';
 
 export default function Sidebar() {
   const [state, setState] = React.useState({
     right: false,
   });
 
-  const {user,setAlert,watchlist} = CryptoState();
-  console.log(watchlist);
-
+  const {user,setAlert,watchlist,coins,symbol} = CryptoState();
 
   const useStyles = makeStyles({
       container:{
@@ -31,7 +30,7 @@ export default function Sidebar() {
           flexDirection:"column",
           padding:20,
           alignItems:"center",
-          gap:"20px"
+          gap:"5px"
       }
   });
 
@@ -78,18 +77,32 @@ export default function Sidebar() {
                   src={user.photoURL}
                   style={{
                       border:"solid 5px #3a0748",
-                      borderRadius:"50%"
+                      borderRadius:"50%",
+                      marginBottom:20
                   }}
                 />
-                <h3>{user.email || user.displayName}</h3>
-                {watchlist.map((item)=>{
-                  return(
-                    <div>{item}</div>
-                  )
+                <h3 style={{marginBottom:20}}>{user.email || user.displayName}</h3>
+                {coins.map(coin =>{
+                  if(watchlist.includes(coin.id))
+                    return(
+                      <div style={{
+                        width:"100%",
+                        display:"flex",
+                        justifyContent:"space-between",
+                        padding:"5px 10px",
+                        backgroundColor:"#ceaee5",
+                        borderRadius:"10px"
+                      }}>
+                        <h5>{coin.name}</h5>
+                        <p>{symbol}{coin.current_price}</p>
+                      </div>
+                    )
+                  
                 })}
                 <Button 
                    variant='contained'
                    onClick={logout}
+                   style={{marginTop:"10px"}}
                 >
                     LOGOUT
                 </Button>
