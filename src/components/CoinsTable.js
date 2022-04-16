@@ -153,7 +153,6 @@ const CoinsTable =()=>{
                                   <span style={{color:profit ? "green" :"#ff2828",fontWeight:700,fontFamily:"Montserrat"}}>
                                     {profit && "+"}
                                     {row.price_change_percentage_24h.toFixed(2)}%
-                                    {console.log(row.price_change_percentage_24h)}
                                   </span>
                                 </TableCell>
 

@@ -12,13 +12,17 @@ import MailIcon from '@mui/icons-material/Mail';
 import { CryptoState } from '../Context';
 import { Avatar} from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firbase';
 
 export default function Sidebar() {
   const [state, setState] = React.useState({
     right: false,
   });
 
-  const {user} = CryptoState();
+  const {user,setAlert,watchlist} = CryptoState();
+  console.log(watchlist);
+
 
   const useStyles = makeStyles({
       container:{
@@ -39,6 +43,14 @@ export default function Sidebar() {
     setState({ ...state, [anchor]: open });
   };
 
+  const logout =()=>{
+      signOut(auth);
+      setAlert({
+        open:true,
+        message:"Signed Out successfully!",
+        type:"success"
+      })
+  }
   const classes = useStyles();
 
   return (
@@ -69,8 +81,18 @@ export default function Sidebar() {
                       borderRadius:"50%"
                   }}
                 />
-                  
-                <h3>{user.email}</h3>
+                <h3>{user.email || user.displayName}</h3>
+                {watchlist.map((item)=>{
+                  return(
+                    <div>{item}</div>
+                  )
+                })}
+                <Button 
+                   variant='contained'
+                   onClick={logout}
+                >
+                    LOGOUT
+                </Button>
             </div>
           </Drawer>
         </React.Fragment>

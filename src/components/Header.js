@@ -31,6 +31,7 @@ export default function Header() {
   });
 
   const {currency,symbol,setCurrency,user} = CryptoState();
+ 
 
   return (
       <ThemeProvider theme={darkTheme}>
