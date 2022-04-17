@@ -12,7 +12,7 @@ import Sidebar from './Sidebar';
 const useStyles= makeStyles((theme)=>({
   title:{
     flex:1,
-    color:"#ae35ff",
+    color:"#aa64db",
     cursor:"pointer",
   }
 }));

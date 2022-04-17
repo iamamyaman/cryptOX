@@ -11,7 +11,7 @@ return(
         </div>
         <div className="hero-content">
             <h1>Track your fav <br></br>
-                <span style={{color:"#bc5eff"}}>
+                <span style={{color:"#aa64db"}}>
                     Cryptocurrency
                 </span>
             </h1>
@@ -20,11 +20,8 @@ return(
                 Login and Add your favorite crypto in your wishlist.
             </p>
             <div className="buttons">
-            <button className ="login-btn">
-                LOGIN
-            </button>
             <button className ="track-btn">
-                <a href ="#price-table" style={{textDecoration:"none",color:"white"}}>TRACK CRYPTO</a>
+                <a href ="#price-table" style={{textDecoration:"none"}}>TRACK CRYPTO</a>
             </button>
             </div>
         </div>

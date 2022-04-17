@@ -71,7 +71,7 @@ const CoinInfo=()=>{
                         {
                           data: coinData.map((coin) => coin[1]),
                           label: `Price ( Past ${days} Days ) in ${currency}`, 
-                          borderColor: "#ae35ff",
+                          borderColor: "#aa64db",
                         },
                       ],
                     }}
@@ -92,7 +92,7 @@ const CoinInfo=()=>{
                <Button 
                  onClick={()=>setDays(item.value)} 
                  key={item.value} 
-                 style={{backgroundColor:"#6e16ad" ,color:"white",flex:1 }}
+                 style={{backgroundColor:"#aa64db" ,color:"white",flex:1 }}
                  
                  >
                    {item.label}

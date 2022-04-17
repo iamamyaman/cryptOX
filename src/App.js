@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme)=>({
    App:{
       backgroundColor:"white",
       minHeight:"100vh",
-      color:"#893dbf",
+      color:"#aa64db",
       width:"100vw",
    }
 }));

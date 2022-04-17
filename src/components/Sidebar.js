@@ -15,6 +15,9 @@ import { makeStyles } from '@mui/styles';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firbase';
 import CoinsTable from './CoinsTable';
+import { AiFillDelete } from "react-icons/ai";
+import { doc,setDoc} from 'firebase/firestore';
+import { db } from '../firbase';
 
 export default function Sidebar() {
   const [state, setState] = React.useState({
@@ -40,6 +43,29 @@ export default function Sidebar() {
     }
 
     setState({ ...state, [anchor]: open });
+  };
+  
+  const removeFromWatchlist = async (coin) => {
+    const coinRef = doc(db, "watchlist", user.uid);
+    try {
+      await setDoc(
+        coinRef,
+        { coins: watchlist.filter((wish) => wish !== coin?.id) },
+        { merge: true }
+      );
+
+      setAlert({
+        open: true,
+        message: `${coin.name} Removed from the Watchlist !`,
+        type: "success",
+      });
+    } catch (error) {
+      setAlert({
+        open: true,
+        message: error.message,
+        type: "error",
+      });
+    }
   };
 
   const logout =()=>{
@@ -89,12 +115,18 @@ export default function Sidebar() {
                         width:"100%",
                         display:"flex",
                         justifyContent:"space-between",
-                        padding:"5px 10px",
+                        padding:"10px 10px",
                         backgroundColor:"#ceaee5",
                         borderRadius:"10px"
                       }}>
                         <h5>{coin.name}</h5>
-                        <p>{symbol}{coin.current_price}</p>
+                        <span style={{display:"flex",gap:"10px"}}>
+                          <p>{symbol}{coin.current_price}</p>
+                          <AiFillDelete
+                            onClick={()=>removeFromWatchlist(coin)}
+                            style={{cursor:"pointer"}}
+                          />
+                        </span>
                       </div>
                     )
                   

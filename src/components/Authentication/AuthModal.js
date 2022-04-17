@@ -86,7 +86,7 @@ export default function AuthModal() {
           width: 65,
           height: 40,
           marginLeft: "7px",
-          backgroundColor: "#AE35FF",
+          backgroundColor: "#6E16AD",
         }}
         onClick={handleOpen}
       >
