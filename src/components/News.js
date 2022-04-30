@@ -1,7 +1,9 @@
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 import React, { useState ,useEffect} from 'react';
+import "../App.css";
 
 import SingleNews from './SingleNews';
 
@@ -31,8 +33,13 @@ const News =()=>{
 
       console.log(newslist);
     return(
-        <Container style={{width:'100%'}}>
-        <div className='news-section' style={{width:"100%",display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
+        <div style={{width:'90%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
+        <div style={{display:'flex',justifyContent:"center",marginBottom:20}}>
+            <h1 style={{fontSize:'4rem'}}>
+                Latest <span style={{color:'#6e16ad'}}>News</span>
+            </h1>
+        </div>
+        <div className='news-section'>
             {
                 newslist.slice(1,10).map((news)=>{
                     return(
@@ -47,7 +54,7 @@ const News =()=>{
             }
         </div>
         
-        </Container>
+        </div>
 
     );
 };

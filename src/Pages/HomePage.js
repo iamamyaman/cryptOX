@@ -5,7 +5,7 @@ import News from "../components/News";
 
 export default function HomePage() {
     return(
-      <div>
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
         <Banner/>
         <CoinsTable/>
         <News/>
