@@ -14,7 +14,7 @@ const SingleNews = ({title,source,url})=>{
             }}>
             <p style={{fontSize:12}}>{source}</p>
             <a href ={url} style={{textDecoration:'none'}}>
-                <p style={{cursor:'pointer',fontSize:15}}>READ NEWS📖</p>
+                <p style={{cursor:'pointer',fontSize:15,color:'#6e16ad',fontWeight:'bold',color:'#8b50b7'}}>READ NEWS 📖</p>
             </a>
             </div>
         </div>

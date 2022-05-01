@@ -35,7 +35,7 @@ const News =()=>{
     return(
         <div style={{width:'90%',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
         <div style={{display:'flex',justifyContent:"center",marginBottom:20}}>
-            <h1 style={{fontSize:'4rem'}}>
+            <h1 style={{fontSize:'3.5rem',textAlign:'center'}}>
                 Latest <span style={{color:'#6e16ad'}}>News</span>
             </h1>
         </div>
